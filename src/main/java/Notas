@@ -1,0 +1,60 @@
+** Descargue Selenium: https://www.selenium.dev/downloads/
+** Descargue WeDriverChrome: https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.92/win64/chromedriver-win64.zip
+** Puse las dependencias de selenium:
+<dependencies>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.1.0</version> <!-- Usar la última versión disponible -->
+    </dependency>
+</dependencies>
+
+
+** Para compilar el proyecto:
+mvn compile
+mvn exec:java
+
+
+**Para terminar un proceso iniciado en chrome driver:
+taskkill /F /IM chromedriver.exe
+
+
+**Ruta de chrome driver:
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\USUARIO\\Documents\\DatosProgramacion\\AnalisisDeAlgoritmosProyectoFinal\\chromedriver-win64\\chromedriver.exe");
+
+
+**NOTA**
+No tengo instalado java sino jdk, para ello :
+1. Abre el buscador de Windows y escribe: variables de entorno.
+2. Clic en "Editar las variables de entorno del sistema" → luego "Variables de entorno".
+3. "Variables del sistema":
+4. Nuevo:
+5. Nombre: JAVA_HOME
+6. Valor: la ruta a tu JDK (ej. C:\Program Files\Java\jdk-17)
+7. Luego edita Path, haz clic en "Nuevo", y añade
+%JAVA_HOME%\bin
+Acepta todo y reinicia tu terminal (PowerShell o CMD).
+
+**Para que chrome acepte ingresar y no tenga problemas de seguridad:
+
+ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+
+        options.addArguments("--remote-allow-origins=*"); // Importante para conexiones locales
+        options.addArguments("--disable-dev-shm-usage");   // Reduce errores de memoria en algunas máquinas
+        options.addArguments("--no-sandbox");              // Evita restricciones por seguridad en algunas instalaciones
+
+        WebDriver driver = new ChromeDriver(options);
+
+
+
+**Cuando no funciona el click porque no es especificamente un boton:
+
+WebElement ingenieriaDiv = wait.until(ExpectedConditions.presenceOfElementLocated(
+    By.xpath("//div[@data-content-listing-item='fac-ingenier-a']")));
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("arguments[0].click();", ingenieriaDiv);
+
+
+**Vamos a crear un perfil para que acceda directamente sin pedir autenticacion:
