@@ -261,16 +261,6 @@ AB  - Sin resumen
 ER  -
 
 TY  - JOUR
-AU  - María Zapata-Cáceres
-AU  - Pedro Marcelino
-AU  - ... Estefanía Martín-Barroso
-TI  - A Bebras Computational Thinking (ABC-Thinking) program for primary school: Evaluation using the competent computational thinking test
-T2  - Education and Information Technologies
-PY  - 2024
-AB  - Bebras tasks are considered to develop Computational Thinking (CT) and are currently used for this purpose in many studies. However, the relationship...
-ER  -
-
-TY  - JOUR
 AU  - Noa Ragonis
 AU  - Rinat B. Rosenberg-Kima
 AU  - Orit Hazzan
@@ -278,6 +268,16 @@ TI  - A computational thinking course for all preservice K-12 teachers: implemen
 T2  - Educational technology research and development
 PY  - 2024
 AB  - Computational thinking is accepted today as a collection of cognitive and social skills required for functioning in the 21st century. The paper...
+ER  -
+
+TY  - JOUR
+AU  - María Zapata-Cáceres
+AU  - Pedro Marcelino
+AU  - ... Estefanía Martín-Barroso
+TI  - A Bebras Computational Thinking (ABC-Thinking) program for primary school: Evaluation using the competent computational thinking test
+T2  - Education and Information Technologies
+PY  - 2024
+AB  - Bebras tasks are considered to develop Computational Thinking (CT) and are currently used for this purpose in many studies. However, the relationship...
 ER  -
 
 TY  - JOUR
@@ -349,14 +349,6 @@ AB  - The purpose of this study is to derive a correlation between the technolog
 ER  -
 
 TY  - JOUR
-AU  - Vishal Singh
-TI  - The Interaction Between Design Thinking, Systems Thinking, and Computational Thinking
-T2  - The Future of Design Education
-PY  - 2025
-AB  - This chapter delves into the interaction between design thinking, systems thinking, and computational thinking. While design thinking has been...
-ER  -
-
-TY  - JOUR
 AU  - Yanjun Pan
 AU  - Elizabeth L. Adams
 AU  - ... Corey Clark
@@ -364,6 +356,14 @@ TI  - Enhancing middle school students’ computational thinking competency thro
 T2  - Educational technology research and development
 PY  - 2024
 AB  - Computational thinking is acknowledged as an essential competency for everyone to learn. However, teachers find it challenging to implement the...
+ER  -
+
+TY  - JOUR
+AU  - Vishal Singh
+TI  - The Interaction Between Design Thinking, Systems Thinking, and Computational Thinking
+T2  - The Future of Design Education
+PY  - 2025
+AB  - This chapter delves into the interaction between design thinking, systems thinking, and computational thinking. While design thinking has been...
 ER  -
 
 TY  - JOUR
@@ -423,14 +423,6 @@ AB  - Research on exploring the relationship between computational thinking and 
 ER  -
 
 TY  - JOUR
-AU  - Ndudi O. Ezeamuzie
-TI  - Influence of school characteristics on computational thinking: A supervised machine learning approach
-T2  - Education and Information Technologies
-PY  - 2024
-AB  - This study explores the influence of schools’ general characteristics, and their information and communication technology (ICT) capabilities on...
-ER  -
-
-TY  - JOUR
 AU  - Tülin Haşlaman
 AU  - Filiz Kuşkaya Mumcu
 AU  - Nilüfer Atman Uslu
@@ -438,6 +430,14 @@ TI  - Fostering computational thinking through digital storytelling: a distincti
 T2  - Education and Information Technologies
 PY  - 2024
 AB  - The present study illustrates digital storytelling (DS) as an open-ended learning environment, which is one of the ways of preparing pre-service...
+ER  -
+
+TY  - JOUR
+AU  - Ndudi O. Ezeamuzie
+TI  - Influence of school characteristics on computational thinking: A supervised machine learning approach
+T2  - Education and Information Technologies
+PY  - 2024
+AB  - This study explores the influence of schools’ general characteristics, and their information and communication technology (ICT) capabilities on...
 ER  -
 
 TY  - JOUR
@@ -481,15 +481,6 @@ AB  - Grouping students according to their abilities and promoting deeper intera
 ER  -
 
 TY  - JOUR
-AU  - Aydan AYTEKİN
-AU  - Mustafa Sami TOPÇU
-TI  - Improving 6th Grade Students’ Creative Problem Solving Skills Through Plugged and Unplugged Computational Thinking Approaches
-T2  - Journal of Science Education and Technology
-PY  - 2024
-AB  - In the digital age in which we live, one of the primary goals of education is to nurture individuals who are capable of thinking creatively, solving...
-ER  -
-
-TY  - JOUR
 AU  - Jiangyue Liu
 AU  - Jing Ma
 AU  - Siran Li
@@ -497,6 +488,15 @@ TI  - Research on school-based AI curriculum design and practice for cultivating
 T2  - Education and Information Technologies
 PY  - 2024
 AB  - This study developed a school-based AI curriculum suitable for senior high school students, with the primary objective of enhancing their mastery of...
+ER  -
+
+TY  - JOUR
+AU  - Aydan AYTEKİN
+AU  - Mustafa Sami TOPÇU
+TI  - Improving 6th Grade Students’ Creative Problem Solving Skills Through Plugged and Unplugged Computational Thinking Approaches
+T2  - Journal of Science Education and Technology
+PY  - 2024
+AB  - In the digital age in which we live, one of the primary goals of education is to nurture individuals who are capable of thinking creatively, solving...
 ER  -
 
 TY  - JOUR
@@ -510,6 +510,15 @@ AB  - Promoting computational thinking (CT) integration in curricula requires we
 ER  -
 
 TY  - JOUR
+AU  - Danxia Xing
+AU  - Yuan Zeng
+TI  - Exploring the effects of secondary school student's information and communication technology literacy on computational thinking skills in the smart classroom environment
+T2  - Education and Information Technologies
+PY  - 2024
+AB  - Computational thinking skills as core skills for emerging citizens are receiving great attention from scholars and educators. Various measures have...
+ER  -
+
+TY  - JOUR
 AU  - Yan Chen
 AU  - Kendall Hartley
 AU  - ... Fran Bromley-Norwood
@@ -520,31 +529,12 @@ AB  - The purpose of this design case is to narrate an iterative design story to
 ER  -
 
 TY  - JOUR
-AU  - Danxia Xing
-AU  - Yuan Zeng
-TI  - Exploring the effects of secondary school student's information and communication technology literacy on computational thinking skills in the smart classroom environment
-T2  - Education and Information Technologies
-PY  - 2024
-AB  - Computational thinking skills as core skills for emerging citizens are receiving great attention from scholars and educators. Various measures have...
-ER  -
-
-TY  - JOUR
 AU  - Sheng-Yi Wu
 AU  - Yu-Sheng Su
 TI  - The effect of learning computational thinking skills through educational board games on students’ cognitive styles, cognitive behaviors, and learning effectiveness
 T2  - Asia Pacific Education Review
 PY  - 2025
 AB  - Education on computational thinking skills has been a focus in many countries. Previous studies have investigated educational board games based on...
-ER  -
-
-TY  - JOUR
-AU  - Yi-Miao Yan
-AU  - Chuang-Qi Chen
-AU  - ... Xin-Dong Ye
-TI  - LLM-based collaborative programming: impact on students’ computational thinking and self-efficacy
-T2  - Humanities and Social Sciences Communications
-PY  - 2025
-AB  - At present, collaborative programming is a prevalent approach in programming education, yet its effectiveness often falls short due to the varying...
 ER  -
 
 TY  - JOUR
@@ -558,6 +548,16 @@ AB  - Computational thinking, a critical cognitive process from computer science
 ER  -
 
 TY  - JOUR
+AU  - Yi-Miao Yan
+AU  - Chuang-Qi Chen
+AU  - ... Xin-Dong Ye
+TI  - LLM-based collaborative programming: impact on students’ computational thinking and self-efficacy
+T2  - Humanities and Social Sciences Communications
+PY  - 2025
+AB  - At present, collaborative programming is a prevalent approach in programming education, yet its effectiveness often falls short due to the varying...
+ER  -
+
+TY  - JOUR
 AU  - Laura Broley
 AU  - Chantal Buteau
 AU  - ... Max Stephens
@@ -565,16 +565,6 @@ TI  - Computational Thinking and Mathematics
 T2  - Handbook of Digital Resources in Mathematics Education
 PY  - 2024
 AB  - This chapter deals with the recent development of computational thinking (CT) in the curricula of many countries, principally in mathematics. It aims...
-ER  -
-
-TY  - JOUR
-AU  - Sixuan Xiang
-AU  - Jenny Wanyi Li
-AU  - Weipeng Yang
-TI  - Developing a robot-based computational thinking assessment for young children
-T2  - Education and Information Technologies
-PY  - 2025
-AB  - This study aims to develop and validate an age-appropriate, easily manipulated, and robot-based assessment named Computational Thinking Observational...
 ER  -
 
 TY  - JOUR
@@ -588,6 +578,14 @@ AB  - STEM experiences that capture students’ curiosity have a unique role in 
 ER  -
 
 TY  - JOUR
+AU  - Lan Hong
+TI  - The impact of educational robots on students' computational thinking: A meta-analysis of K-12
+T2  - Education and Information Technologies
+PY  - 2023
+AB  - Educational robots have unrivaled advantages and value in developing students' computational thinking. Currently, there are fewer studies on the...
+ER  -
+
+TY  - JOUR
 AU  - Hüseyin Can Şenel
 AU  - Selma Şenel
 TI  - Assessment of Computational Thinking Skills
@@ -597,11 +595,12 @@ AB  - In this chapter, approaches used to assess computational thinking skills w
 ER  -
 
 TY  - JOUR
-AU  - Lan Hong
-TI  - The impact of educational robots on students' computational thinking: A meta-analysis of K-12
+AU  - Ting-Chia Hsu
+AU  - Mu-Sheng Chen
+TI  - Effects of students using different learning approaches for learning computational thinking and AI applications
 T2  - Education and Information Technologies
-PY  - 2023
-AB  - Educational robots have unrivaled advantages and value in developing students' computational thinking. Currently, there are fewer studies on the...
+PY  - 2024
+AB  - This study aimed to compare the effectiveness of the experiential learning cycle (ELC) and self-regulated learning (SRL), both implemented through a...
 ER  -
 
 TY  - JOUR
@@ -614,21 +613,32 @@ AB  - Middle school students often enter Computer Science (CS) classes without p
 ER  -
 
 TY  - JOUR
+AU  - Sixuan Xiang
+AU  - Jenny Wanyi Li
+AU  - Weipeng Yang
+TI  - Developing a robot-based computational thinking assessment for young children
+T2  - Education and Information Technologies
+PY  - 2025
+AB  - This study aims to develop and validate an age-appropriate, easily manipulated, and robot-based assessment named Computational Thinking Observational...
+ER  -
+
+TY  - JOUR
+AU  - Peidi Gu
+AU  - Jiaming Wu
+AU  - ... Yan Dong
+TI  - Scaffolding self-regulation in project-based programming learning through online collaborative diaries to promote computational thinking
+T2  - Education and Information Technologies
+PY  - 2025
+AB  - Teaching computational thinking skills to novice college students via programming poses considerable challenges. It involves learning programming...
+ER  -
+
+TY  - JOUR
 AU  - Ioannis Vourletsis
 AU  - Panagiotis Politis
 TI  - Greek translation, cultural adaptation, and psychometric validation of beginners computational thinking test (BCTt)
 T2  - Education and Information Technologies
 PY  - 2024
 AB  - Computational thinking (CT) is regarded as a valuable skill set for the students of the 21st century, fostering problem-solving skills applicable to...
-ER  -
-
-TY  - JOUR
-AU  - Ting-Chia Hsu
-AU  - Mu-Sheng Chen
-TI  - Effects of students using different learning approaches for learning computational thinking and AI applications
-T2  - Education and Information Technologies
-PY  - 2024
-AB  - This study aimed to compare the effectiveness of the experiential learning cycle (ELC) and self-regulated learning (SRL), both implemented through a...
 ER  -
 
 TY  - JOUR
@@ -662,15 +672,6 @@ AB  - Due to its task-based, gamified, and interactive features, unplugged progr
 ER  -
 
 TY  - JOUR
-AU  - Maria Cujdikova
-AU  - Ivan Kalas
-TI  - The Role of Tables in Computational Thinking and Mathematical Thinking
-T2  - Digitally Transformed Education: Are We There Yet?
-PY  - 2025
-AB  - Tables are one of the key approaches to organising, presenting, and analysing data, making them valuable for the development of computational...
-ER  -
-
-TY  - JOUR
 AU  - Lucas Vasconcelos
 AU  - Ismahan Arslan-Ari
 AU  - ... Renato Gonzalez-Tapia
@@ -678,6 +679,15 @@ TI  - Robotics in early childhood STEM education (REC-STEMEd): The impact on pre
 T2  - Education and Information Technologies
 PY  - 2025
 AB  - There is a large disconnect between the increasing need for computer science education in K-12 schools and the preservice teacher training provided....
+ER  -
+
+TY  - JOUR
+AU  - Maria Cujdikova
+AU  - Ivan Kalas
+TI  - The Role of Tables in Computational Thinking and Mathematical Thinking
+T2  - Digitally Transformed Education: Are We There Yet?
+PY  - 2025
+AB  - Tables are one of the key approaches to organising, presenting, and analysing data, making them valuable for the development of computational...
 ER  -
 
 TY  - JOUR

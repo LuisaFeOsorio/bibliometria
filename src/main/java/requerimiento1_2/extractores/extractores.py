@@ -29,7 +29,7 @@ class ExtractorBase:
             return True
         except Exception as e:
             print(f"[ExtractorBase] Error en login Google: {e}")
-            return False
+            raise Exception("Login fallido con Google") from e
 
 class ExtractorScienceDirect(ExtractorBase):
     def iniciar_sesion(self):
@@ -37,15 +37,13 @@ class ExtractorScienceDirect(ExtractorBase):
         try:
             self.navegador.get("https://www-sciencedirect-com.crai.referencistas.com/")
             self.espera.until(EC.element_to_be_clickable((By.ID, "btn-google"))).click()
-            if not self._iniciar_sesion_google():
-                print("[ScienceDirect] Falló el login con Google.")
-                return False
+            self._iniciar_sesion_google()
             self._aceptar_cookies()
             print("[ScienceDirect] Sesión iniciada correctamente.")
             return True
         except Exception as e:
             print(f"[ScienceDirect] Error al iniciar sesión: {e}")
-            return False
+            raise Exception("Login fallido en ScienceDirect") from e
 
     def _aceptar_cookies(self):
         print("[ScienceDirect] Intentando aceptar cookies...")
@@ -78,7 +76,7 @@ class ExtractorScienceDirect(ExtractorBase):
         except Exception as e:
             print(f"[ScienceDirect] Error al buscar: {str(e)}")
             self.navegador.save_screenshot("error_busqueda_sciencedirect.png")
-            return False
+            raise Exception("Búsqueda fallida en ScienceDirect") from e
 
     def extraer_resultados(self, max_resultados):
         print(f"[ScienceDirect] Extrayendo hasta {max_resultados} resultados...")
@@ -144,13 +142,10 @@ class ExtractorScienceDirect(ExtractorBase):
 
     def extraer(self, consulta, max_resultados=20):
         print(f"[ScienceDirect] Iniciando extracción para: '{consulta}'")
-        if not self.iniciar_sesion():
-            print("[ScienceDirect] No se pudo iniciar sesión.")
-            return []
-        if not self.buscar(consulta):
-            print("[ScienceDirect] No se pudo realizar la búsqueda.")
-            return []
-        return self.extraer_resultados(max_resultados)
+        self.iniciar_sesion()  # Lanzará excepción si falla el login
+        self.buscar(consulta)  # Lanzará excepción si falla la búsqueda
+        resultados = self.extraer_resultados(max_resultados)
+        return resultados
 
 class ExtractorSpringer(ExtractorBase):
     def iniciar_sesion(self):
@@ -158,20 +153,18 @@ class ExtractorSpringer(ExtractorBase):
         try:
             self.navegador.get("https://link-springer-com.crai.referencistas.com/")
             self.espera.until(EC.element_to_be_clickable((By.ID, "btn-google"))).click()
-            if not self._iniciar_sesion_google():
-                print("[Springer] Falló el login con Google.")
-                return False
+            self._iniciar_sesion_google()
             self._aceptar_cookies()
             print("[Springer] Sesión iniciada correctamente.")
             return True
         except Exception as e:
             print(f"[Springer] Error al iniciar sesión: {e}")
-            return False
+            raise Exception("Login fallido en Springer") from e
 
     def _aceptar_cookies(self):
         print("[Springer] Intentando aceptar cookies...")
         try:
-            WebDriverWait(self.navegador, ).until(
+            WebDriverWait(self.navegador, 5).until(
                 EC.element_to_be_clickable((By.CLASS_NAME, "c-cookie-banner__dismiss"))
             ).click()
             time.sleep(1)
@@ -194,7 +187,7 @@ class ExtractorSpringer(ExtractorBase):
             return True
         except Exception as e:
             print(f"[Springer] Error al buscar: {e}")
-            return False
+            raise Exception("Búsqueda fallida en Springer") from e
 
     def extraer_resultados(self, max_resultados):
         print(f"[Springer] Extrayendo hasta {max_resultados} resultados...")
@@ -287,12 +280,8 @@ class ExtractorSpringer(ExtractorBase):
 
     def extraer(self, consulta, max_resultados=50):
         print(f"[Springer] Iniciando extracción para: '{consulta}'")
-        if not self.iniciar_sesion():
-            print("[Springer] No se pudo iniciar sesión.")
-            return []
-        if not self.buscar(consulta):
-            print("[Springer] No se pudo realizar la búsqueda.")
-            return []
+        self.iniciar_sesion() # Lanzará excepción si falla el login
+        self.buscar(consulta) # Lanzará excepción si falla la búsqueda
         return self.extraer_resultados(max_resultados)
 
 class ExtractorSage(ExtractorBase):
@@ -301,16 +290,13 @@ class ExtractorSage(ExtractorBase):
         try:
             self.navegador.get("https://search-sagepub-com.crai.referencistas.com/")
             self.espera.until(EC.element_to_be_clickable((By.ID, "btn-google"))).click()
-            if not self._iniciar_sesion_google():
-                print("[SAGE] Falló el login con Google.")
-                return False
+            self._iniciar_sesion_google()
             self._aceptar_cookies()
             print("[SAGE] Sesión iniciada correctamente.")
             return True
         except Exception as e:
             print(f"[SAGE] Error al iniciar sesión en SAGE: {e}")
-            return False
-        time.sleep(4)
+            raise Exception("Login fallido en SAGE") from e
 
     def _aceptar_cookies(self):
         print("[SAGE] Intentando aceptar cookies...")
@@ -340,7 +326,7 @@ class ExtractorSage(ExtractorBase):
             return True
         except Exception as e:
             print(f"[SAGE] Error al buscar: {e}")
-            return False
+            raise Exception("Búsqueda fallida en SAGE") from e
 
     def extraer_resultados(self, max_resultados):
         print(f"[SAGE] Extrayendo hasta {max_resultados} resultados...")
@@ -411,10 +397,6 @@ class ExtractorSage(ExtractorBase):
 
     def extraer(self, consulta, max_resultados=20):
         print(f"[SAGE] Iniciando extracción para: '{consulta}'")
-        if not self.iniciar_sesion():
-            print("[SAGE] No se pudo iniciar sesión.")
-            return []
-        if not self.buscar(consulta):
-            print("[SAGE] No se pudo realizar la búsqueda.")
-            return []
+        self.iniciar_sesion()  # Lanzará excepción si falla el login
+        self.buscar(consulta)  # Lanzará excepción si falla la búsqueda
         return self.extraer_resultados(max_resultados)

@@ -1,4 +1,5 @@
 import os
+import sys
 
 from requerimiento1_2.exportacion.exportadores import Exportadores
 from requerimiento1_2.extractores.extractores import ExtractorScienceDirect, ExtractorSpringer, ExtractorSage
@@ -28,12 +29,29 @@ def main():
     print("\n===== PROCESO DE EXTRACCIÓN =====")
     # Extracción de ScienceDirect
     print("\n[1/3] Extrayendo artículos de ScienceDirect...")
-    navegador_sd, espera_sd, perfil_sd = Utils.configurar_navegador(CHROMEDRIVER_PATH)
-    extractor_sd = ExtractorScienceDirect(navegador_sd, espera_sd, correo, contrasena)
-    entradas_sd = extractor_sd.extraer("computational thinking", max_resultados=40)
-    print(f"ScienceDirect: {len(entradas_sd)} artículos extraídos.")
-    Utils.limpiar_recursos(navegador_sd, perfil_sd)
+    navegador_sd = None
+    perfil_sd = None
+    try:
+        navegador_sd, espera_sd, perfil_sd = Utils.configurar_navegador(CHROMEDRIVER_PATH)
+        extractor_sd = ExtractorScienceDirect(navegador_sd, espera_sd, correo, contrasena)
+        entradas_sd = extractor_sd.extraer("computational thinking", max_resultados=40)
+        # Verifica si el login realmente fue exitoso (por ejemplo, lista vacía puede indicar error)
+        if entradas_sd is None or len(entradas_sd) == 0:
+            raise Exception("No se extrajeron artículos, posiblemente el login falló.")
+        print(f"ScienceDirect: {len(entradas_sd)} artículos extraídos.")
+    except Exception as e:
+        print(f"[ERROR] Falló el login o la extracción en ScienceDirect: {e}")
+        print("El programa terminará. Por favor verifica tus credenciales e inténtalo de nuevo.")
+        if navegador_sd is not None and perfil_sd is not None:
+            try:
+                Utils.limpiar_recursos(navegador_sd, perfil_sd)
+            except Exception:
+                pass
+        sys.exit(1)
+    if navegador_sd is not None and perfil_sd is not None:
+        Utils.limpiar_recursos(navegador_sd, perfil_sd)
 
+    # Si llegó aquí, el login fue exitoso en ScienceDirect. Continuar flujo normal:
     # Extracción de Springer
     print("\n[2/3] Extrayendo artículos de Springer...")
     navegador_sp, espera_sp, perfil_sp = Utils.configurar_navegador(CHROMEDRIVER_PATH)
