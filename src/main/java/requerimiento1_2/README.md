@@ -3,7 +3,7 @@
 ## Descripción
 
 Este paquete está diseñado para:
-- **Requerimiento 1:** Extraer metadatos de artículos científicos de diferentes fuentes (por ejemplo: Springer, ScienceDirect, IEEE) usando web scraping automatizado.
+- **Requerimiento 1:** Extraer datos de artículos científicos de diferentes fuentes (por ejemplo: Springer, ScienceDirect) usando web scraping automatizado.
 - **Requerimiento 2:** Unificar los resultados, eliminar duplicados y generar un archivo único en formato `.bib` con todos los artículos recopilados.
 
 ## Flujo de trabajo
@@ -13,11 +13,17 @@ Este paquete está diseñado para:
 3. **Eliminación de duplicados:** Se implementan heurísticas (por ejemplo, comparar títulos normalizados y años) para filtrar artículos repetidos.
 4. **Exportación:** Los resultados únicos se guardan en el archivo `resultados_unicos.bib` en formato BibTeX.
 
-## Estructura de Archivos
+# Clases y paquetes 
 
-- Scripts de scraping por fuente (`extraer_springer.py`, `extraer_sciencedirect.py`, etc.)
-- Script de deduplicación y exportación a BibTeX.
-- Archivo final: `resultados_unicos.bib`.
+**Paquetes**
+- exportacion
+- extractores
+- util
+
+**Clases**
+- exportadores: Inluye los metodos para construir los archivos .ris y .bib
+- extractores:  Cuenta con las funciones para obtener la información de las bases de datos
+- utils: cuenta con metodos usados en varias ocasiones
 
 ## Ejecución
 

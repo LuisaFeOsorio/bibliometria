@@ -1,0 +1,7 @@
+selenium
+pandas
+openpyxl
+matplotlib
+wordcloud
+networkx
+scikit-learn

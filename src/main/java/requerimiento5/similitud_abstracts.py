@@ -7,8 +7,6 @@ Incluye:
 - Clustering para agrupar artículos similares
 - Visualización de matrices de similitud y reporte de agrupamientos
 
-Autor: [Tu Nombre]
-Fecha: 2025-05-18
 """
 
 import os

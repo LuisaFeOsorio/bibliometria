@@ -1,0 +1,194 @@
+Grupo 0:
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Sin título
+  - Teaching Computational Thinking and Coding in Primary Schools
+  - Uncovering Student Thinking about Mathematics in the Common Core, Grades 6-8: 25 Formative Assessment Probes
+  - The Psychology of Thinking
+  - Systems Thinking for Effective Managers: The Road Less Travelled
+  - Teaching Creative and Critical Thinking in Schools
+  - Critical Thinking Skills for Education Students
+  - Pathways to Thinking Schools
+  - Creating Thinking Classrooms: Leading Educational Change for This Century
+  - Thinking Critically About Child Development: Examining Myths and Misunderstandings
+  - Tom Chatfield on Critical Thinking and Bias
+  - Child-Centred Nursing: Promoting Critical Thinking
+  - Public Management: Thinking and Acting in Three Dimensions
+  - Concept-Based Curriculum and Instruction for the Thinking Classroom
+  - Ready-to-Go Instructional Strategies That Build Collaboration, Communication, and Critical Thinking
+  - Critical Thinking and Reflection for Mental Health Nursing Students
+  - The Indian Boss at Work: Thinking Global Acting Indian
+  - Teaching Computing Unplugged in Primary Schools: Exploring Primary Computing through Practical Activities Away from the Computer
+  - Unleashing the Positive Power of Differences: Polarity Thinking in our Schools
+  - Computational Neuroscience and Cognitive Modelling: A Student's Introduction to Methods and Procedures
+  - 5 Principles of the Modern Mathematics Classroom: Creating a Culture of Innovative Thinking
+
+Grupo 39:
+  - A Bebras Computational Thinking (ABC-Thinking) program for primary school: Evaluation using the competent computational thinking test
+
+Grupo 49:
+  - A computational thinking course for all preservice K-12 teachers: implementing the four pedagogies for developing computational thinking (4P4CT) framework
+
+Grupo 48:
+  - Bringing computational thinking into classrooms: a systematic review on supporting teachers in integrating computational thinking into K-12 classrooms
+
+Grupo 36:
+  - Computational Thinking in Science Laboratories Based on the Flipped Classroom Model: Computational Thinking, Laboratory Entrepreneurial and Attitude
+
+Grupo 25:
+  - Exploring individuals’ computational thinking with data
+
+Grupo 24:
+  - Integrating computational thinking, game design, and design thinking: a scoping review on trends, applications, and implications for education
+
+Grupo 40:
+  - Effects of a design-based research approach on fourth-grade students’ critical thinking, problem-solving skills, computational thinking, and creativity self-efficacy
+
+Grupo 31:
+  - Computational thinking beyond coding: exploring student computational practices while playing and modifying a socio-scientific simulation game with integrated computational tools
+
+Grupo 32:
+  - Correlation analysis between sub-element of technological thinking disposition and computational thinking of gifted students in South Korea
+
+Grupo 44:
+  - The Interaction Between Design Thinking, Systems Thinking, and Computational Thinking
+
+Grupo 28:
+  - Enhancing middle school students’ computational thinking competency through game-based learning
+
+Grupo 47:
+  - Redefining computational thinking: A holistic framework and its implications for K-12 education
+
+Grupo 35:
+  - Thinking spatially in computational social science
+
+Grupo 43:
+  - Cultivation and practice of computational thinking in Project-based teaching
+
+Grupo 41:
+  - Beyond teaching computational thinking: Exploring kindergarten teachers’ computational thinking and computer science curriculum design considerations
+
+Grupo 26:
+  - Computational Thinking Framework
+
+Grupo 45:
+  - Computational thinking through the lens of biological evolution learning: enhancing understanding through the levels of biological organization and computational complexity
+
+Grupo 19:
+  - Influence of school characteristics on computational thinking: A supervised machine learning approach
+
+Grupo 27:
+  - Fostering computational thinking through digital storytelling: a distinctive approach to promoting computational thinking skills of pre-service teachers
+
+Grupo 23:
+  - Computational thinking tools for early years education: a design study
+
+Grupo 38:
+  - Examining Young Children’s Computational Thinking through Animation Art
+
+Grupo 21:
+  - Effects of geogebra-enhanced scratch computational thinking instruction on fifth-grade students' motivation, anxiety, cognitive load
+
+Grupo 33:
+  - The effect of ability grouping on students' computational thinking in shared regulation-supported collaborative programming
+
+Grupo 12:
+  - Improving 6th Grade Students’ Creative Problem Solving Skills Through Plugged and Unplugged Computational Thinking Approaches
+
+Grupo 46:
+  - Research on school-based AI curriculum design and practice for cultivating computational thinking in high school students
+
+Grupo 30:
+  - Assessing Disciplinary Teachers'Pedagogical and Content Knowledge in Computational Thinking
+
+Grupo 42:
+  - Integrating Computational Thinking into Technology Preparation Curriculum for Teacher Candidates: A Funds of Identity Approach
+
+Grupo 22:
+  - Exploring the effects of secondary school student's information and communication technology literacy on computational thinking skills in the smart classroom environment
+
+Grupo 10:
+  - The effect of learning computational thinking skills through educational board games on students’ cognitive styles, cognitive behaviors, and learning effectiveness
+
+Grupo 37:
+  - LLM-based collaborative programming: impact on students’ computational thinking and self-efficacy
+
+Grupo 15:
+  - The effect of gender, high school major, admission process, and year of study towards pre-service elementary teachers' computational thinking skills
+
+Grupo 34:
+  - Computational Thinking and Mathematics
+
+Grupo 13:
+  - Developing a robot-based computational thinking assessment for young children
+
+Grupo 11:
+  - Computational Thinking During a Short, Authentic, Interdisciplinary STEM Experience for Elementary Students
+
+Grupo 17:
+  - Assessment of Computational Thinking Skills
+
+Grupo 5:
+  - The impact of educational robots on students' computational thinking: A meta-analysis of K-12
+
+Grupo 20:
+  - Computational thinking with game design: An action research study with middle school students
+
+Grupo 16:
+  - Greek translation, cultural adaptation, and psychometric validation of beginners computational thinking test (BCTt)
+
+Grupo 29:
+  - Effects of students using different learning approaches for learning computational thinking and AI applications
+
+Grupo 18:
+  - FADE-CTP: A Framework for the Analysis and Design of Educational Computational Thinking Problems
+
+Grupo 7:
+  - Bridging computational thinking research and practice of pre-service and in-service teachers
+
+Grupo 9:
+  - The effects of unplugged programming activities on K-9 students’ computational thinking: meta-analysis
+
+Grupo 8:
+  - The Role of Tables in Computational Thinking and Mathematical Thinking
+
+Grupo 14:
+  - Robotics in early childhood STEM education (REC-STEMEd): The impact on preservice teachers’ attitudes and intentions toward computational thinking
+
+Grupo 6:
+  - Effect of project-based Arduino robot application on trainee teachers computational thinking in robotics programming course
+
+Grupo 3:
+  - Characterizing Natural Selection Contextual Transfer with Epistemic Network Analysis: A Case for Unplugged Computational Thinking
+
+Grupo 4:
+  - Computational thinking in complex problem solving based on data analysis: exploring the role of problem representation using the Tower of Hanoi
+
+Grupo 2:
+  - Developing Computational Thinking Using LYNX for Loom Beading Designs in Grade 5
+
+Grupo 1:
+  - Computational thinking in primary school: effects of student and school characteristics
+

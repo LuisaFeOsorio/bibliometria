@@ -4,159 +4,145 @@ from collections import Counter, defaultdict
 import pandas as pd
 import matplotlib.pyplot as plt
 
-OUTPUT_DIR = "estadisticas_salida"  # Cambia esto si quieres otro nombre de carpeta
+DIRECTORIO_SALIDA = "estadisticas_salida"
 
-def ensure_output_dir():
-    if not os.path.exists(OUTPUT_DIR):
-        os.makedirs(OUTPUT_DIR)
+def asegurar_directorio_salida():
+    if not os.path.exists(DIRECTORIO_SALIDA):
+        os.makedirs(DIRECTORIO_SALIDA)
 
-def parse_bibtex(file_path):
-    entries = []
-    entry = {}
-    entry_type = None
-    key = None
-    pattern_entry = re.compile(r"^@(\w+)\{([^,]+),")
-    pattern_field = re.compile(r"^\s*(\w+)\s*=\s*[\{|\"](.+?)[\}|\"]\s*,?\s*$")
-    with open(file_path, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-    for line in lines:
-        m = pattern_entry.match(line)
+def parsear_bibtex(ruta_archivo):
+    entradas = []
+    entrada = {}
+    tipo_entrada = None
+    clave = None
+    patron_entrada = re.compile(r"^@(\w+)\{([^,]+),")
+    patron_campo = re.compile(r"^\s*(\w+)\s*=\s*[\{|\"](.+?)[\}|\"]\s*,?\s*$")
+    with open(ruta_archivo, 'r', encoding='utf-8') as f:
+        lineas = f.readlines()
+    for linea in lineas:
+        m = patron_entrada.match(linea)
         if m:
-            if entry:
-                entries.append(entry)
-                entry = {}
-            entry_type, key = m.groups()
-            entry['type'] = entry_type.lower()
-            entry['key'] = key
+            if entrada:
+                entradas.append(entrada)
+                entrada = {}
+            tipo_entrada, clave = m.groups()
+            entrada['tipo'] = tipo_entrada.lower()
+            entrada['clave'] = clave
         else:
-            m2 = pattern_field.match(line)
+            m2 = patron_campo.match(linea)
             if m2:
                 campo, valor = m2.groups()
-                entry[campo.lower()] = valor.strip()
-        if line.strip().endswith('}'):
-            if entry:
-                entries.append(entry)
-                entry = {}
-    if entry and entry not in entries:
-        entries.append(entry)
-    final_entries = []
-    for e in entries:
+                entrada[campo.lower()] = valor.strip()
+        if linea.strip().endswith('}'):
+            if entrada:
+                entradas.append(entrada)
+                entrada = {}
+    if entrada and entrada not in entradas:
+        entradas.append(entrada)
+    entradas_finales = []
+    for e in entradas:
         autores = e.get('author', '').replace('\n', ' ').split(' and ')
         autores = [a.strip() for a in autores if a.strip()]
-        first_author = autores[0] if autores else 'Unknown'
-        title = e.get('title', 'Sin título')
-        journal = e.get('journal', e.get('booktitle', 'Desconocido'))
-        year = e.get('year', 'Desconocido')
-        bibtype = e.get('type', 'article')
-        if bibtype in ('article', 'journal'):
-            tipo = 'article'
-        elif bibtype in ('inproceedings', 'conference'):
-            tipo = 'conference'
-        elif bibtype == 'book':
-            tipo = 'book'
-        elif bibtype == 'incollection':
-            tipo = 'book chapter'
+        primer_autor = autores[0] if autores else 'Desconocido'
+        titulo = e.get('title', 'Sin título')
+        revista = e.get('journal', e.get('booktitle', 'Desconocido'))
+        anio = e.get('year', 'Desconocido')
+        tipobib = e.get('tipo', 'article')
+        if tipobib in ('article', 'journal'):
+            tipo = 'artículo'
+        elif tipobib in ('inproceedings', 'conference'):
+            tipo = 'conferencia'
+        elif tipobib == 'book':
+            tipo = 'libro'
+        elif tipobib == 'incollection':
+            tipo = 'capítulo de libro'
         else:
-            tipo = bibtype
-        publisher = e.get('publisher', 'Desconocido')
-        final_entries.append({
-            'key': e.get('key', ''),
-            'authors': autores,
-            'first_author': first_author,
-            'title': title,
-            'journal': journal,
-            'year': year,
-            'type': tipo,
-            'publisher': publisher
+            tipo = tipobib
+        editorial = e.get('publisher', 'Desconocido')
+        entradas_finales.append({
+            'clave': e.get('clave', ''),
+            'autores': autores,
+            'primer_autor': primer_autor,
+            'titulo': titulo,
+            'revista': revista,
+            'anio': anio,
+            'tipo': tipo,
+            'editorial': editorial
         })
-    return final_entries
+    return entradas_finales
 
-def generate_statistics(entries):
-    stats = {}
-    all_authors = [author for entry in entries for author in entry['authors']]
-    stats['top_authors'] = Counter(all_authors).most_common(15)
-    year_type_counts = defaultdict(lambda: defaultdict(int))
-    for entry in entries:
-        year_type_counts[entry['type']][entry['year']] += 1
-    stats['year_by_type'] = year_type_counts
-    stats['type_distribution'] = Counter([entry['type'] for entry in entries])
-    stats['top_journals'] = Counter([entry['journal'] for entry in entries]).most_common(15)
-    stats['top_publishers'] = Counter([entry['publisher'] for entry in entries]).most_common(15)
-    return stats
+def generar_estadisticas(entradas):
+    estadisticas = {}
+    todos_autores = [autor for entrada in entradas for autor in entrada['autores']]
+    estadisticas['autores_destacados'] = Counter(todos_autores).most_common(15)
+    anio_tipo_conteo = defaultdict(lambda: defaultdict(int))
+    for entrada in entradas:
+        anio_tipo_conteo[entrada['tipo']][entrada['anio']] += 1
+    estadisticas['anio_por_tipo'] = anio_tipo_conteo
+    estadisticas['distribucion_tipos'] = Counter([entrada['tipo'] for entrada in entradas])
+    estadisticas['revistas_destacadas'] = Counter([entrada['revista'] for entrada in entradas]).most_common(15)
+    estadisticas['editoriales_destacadas'] = Counter([entrada['editorial'] for entrada in entradas]).most_common(15)
+    return estadisticas
 
-def visualize_statistics(stats):
-    # 1. Top autores
-    if stats['top_authors']:
-        authors, counts = zip(*stats['top_authors'])
+def visualizar_estadisticas(estadisticas):
+    # 1. Autores destacados
+    if estadisticas['autores_destacados']:
+        autores, cantidades = zip(*estadisticas['autores_destacados'])
         plt.figure(figsize=(10, 6))
-        plt.barh(authors[::-1], counts[::-1])
+        plt.barh(autores[::-1], cantidades[::-1])
         plt.title('Top 15 autores con más publicaciones')
         plt.xlabel('Número de publicaciones')
         plt.tight_layout()
-        plt.savefig(os.path.join(OUTPUT_DIR, 'top_authors.png'))
+        plt.savefig(os.path.join(DIRECTORIO_SALIDA, 'autores_destacados.png'))
         plt.close()
     # 2. Publicaciones por año y tipo
-    if stats['year_by_type']:
-        df = pd.DataFrame(stats['year_by_type']).fillna(0).astype(int)
+    if estadisticas['anio_por_tipo']:
+        df = pd.DataFrame(estadisticas['anio_por_tipo']).fillna(0).astype(int)
         df.T.plot(kind='bar', stacked=True, figsize=(12, 6))
         plt.title('Publicaciones por año y tipo')
         plt.ylabel('Número de publicaciones')
         plt.xlabel('Año')
         plt.legend(title='Tipo de producto')
         plt.tight_layout()
-        plt.savefig(os.path.join(OUTPUT_DIR, 'publications_by_year_type.png'))
+        plt.savefig(os.path.join(DIRECTORIO_SALIDA, 'publicaciones_por_anio_tipo.png'))
         plt.close()
     # 3. Distribución de tipos
-    if stats['type_distribution']:
-        types, counts = zip(*stats['type_distribution'].items())
+    if estadisticas['distribucion_tipos']:
+        tipos, cantidades = zip(*estadisticas['distribucion_tipos'].items())
         plt.figure(figsize=(8, 8))
-        plt.pie(counts, labels=types, autopct='%1.1f%%')
+        plt.pie(cantidades, labels=tipos, autopct='%1.1f%%')
         plt.title('Distribución de tipos de productos')
-        plt.savefig(os.path.join(OUTPUT_DIR, 'type_distribution.png'))
+        plt.savefig(os.path.join(DIRECTORIO_SALIDA, 'distribucion_tipos.png'))
         plt.close()
-    # 4. Top journals
-    if stats['top_journals']:
-        journals, counts = zip(*stats['top_journals'])
+    # 4. Revistas destacadas
+    if estadisticas['revistas_destacadas']:
+        revistas, cantidades = zip(*estadisticas['revistas_destacadas'])
         plt.figure(figsize=(10, 6))
-        plt.barh(journals[::-1], counts[::-1])
-        plt.title('Top 15 journals con más publicaciones')
+        plt.barh(revistas[::-1], cantidades[::-1])
+        plt.title('Top 15 revistas con más publicaciones')
         plt.xlabel('Número de publicaciones')
         plt.tight_layout()
-        plt.savefig(os.path.join(OUTPUT_DIR, 'top_journals.png'))
+        plt.savefig(os.path.join(DIRECTORIO_SALIDA, 'revistas_destacadas.png'))
         plt.close()
-    # 5. Top publishers
-    if stats['top_publishers']:
-        publishers, counts = zip(*stats['top_publishers'])
+    # 5. Editoriales destacadas
+    if estadisticas['editoriales_destacadas']:
+        editoriales, cantidades = zip(*estadisticas['editoriales_destacadas'])
         plt.figure(figsize=(10, 6))
-        plt.barh(publishers[::-1], counts[::-1])
-        plt.title('Top 15 publishers con más publicaciones')
+        plt.barh(editoriales[::-1], cantidades[::-1])
+        plt.title('Top 15 editoriales con más publicaciones')
         plt.xlabel('Número de publicaciones')
         plt.tight_layout()
-        plt.savefig(os.path.join(OUTPUT_DIR, 'top_publishers.png'))
+        plt.savefig(os.path.join(DIRECTORIO_SALIDA, 'editoriales_destacadas.png'))
         plt.close()
-
-def save_statistics_to_excel(stats, filename='bibliometric_stats.xlsx'):
-    with pd.ExcelWriter(os.path.join(OUTPUT_DIR, filename)) as writer:
-        pd.DataFrame(stats['top_authors'], columns=['Autor', 'Publicaciones']).to_excel(
-            writer, sheet_name='Top Autores', index=False)
-        df = pd.DataFrame(stats['year_by_type']).fillna(0).astype(int)
-        df.T.to_excel(writer, sheet_name='Publicaciones por año')
-        pd.DataFrame(stats['type_distribution'].items(), columns=['Tipo', 'Cantidad']).to_excel(
-            writer, sheet_name='Tipos de producto', index=False)
-        pd.DataFrame(stats['top_journals'], columns=['Journal', 'Publicaciones']).to_excel(
-            writer, sheet_name='Top Journals', index=False)
-        pd.DataFrame(stats['top_publishers'], columns=['Publisher', 'Publicaciones']).to_excel(
-            writer, sheet_name='Top Publishers', index=False)
 
 def main():
-    ensure_output_dir()
-    entries = parse_bibtex('resultados_unicos.bib')
-    print(f"Entradas leídas: {len(entries)}")
-    stats = generate_statistics(entries)
-    visualize_statistics(stats)
-    save_statistics_to_excel(stats)
+    asegurar_directorio_salida()
+    entradas = parsear_bibtex('resultados_unicos.bib')
+    print(f"Entradas leídas: {len(entradas)}")
+    estadisticas = generar_estadisticas(entradas)
+    visualizar_estadisticas(estadisticas)
     print("¡Estadísticas generadas con éxito!")
-    print(f"- Gráficos y Excel guardados en: {OUTPUT_DIR}/")
+    print(f"- Gráficos y archivos guardados en: {DIRECTORIO_SALIDA}/")
 
 if __name__ == '__main__':
     main()
