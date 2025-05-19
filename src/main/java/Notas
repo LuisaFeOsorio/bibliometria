@@ -57,4 +57,69 @@ JavascriptExecutor js = (JavascriptExecutor) driver;
 js.executeScript("arguments[0].click();", ingenieriaDiv);
 
 
-**Vamos a crear un perfil para que acceda directamente sin pedir autenticacion:
+** Para activar chrome driver : en la terminal
+cd C:\Users\USUARIO\Documents\DatosProgramacion\AnalisisDeAlgoritmosProyectoFinal\chromedriver-win64>
+**En otra linea**
+.\chromedriver.exe
+
+
+
+**Instale esto para configurar python: pip install requests browser-cookie3 beautifulsoup4 lxml
+**Instale esto para configurar from webdriver_manager.chrome import ChromeDriverManager
+
+: python -m pip install webdriver-manager
+
+
+**estructuar de resultados.ris o bib:
+
+TY  - JOUR    ← Tipo de referencia (Type)
+AU  - Nombre  ← Autor (Author)
+TI  - Título  ← Título (Title)
+AB  - Resumen ← Abstract (Abstract)
+ER           ← Fin del registro (End of Record)
+
+
+**Para poner la ruta relativa del chrome driver:
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+CHROMEDRIVER_PATH = os.path.join(BASE_DIR, 'chromedriver-win64', 'chromedriver.exe')
+
+if not os.path.isfile(CHROMEDRIVER_PATH):
+    raise FileNotFoundError(f"El archivo chromedriver.exe no se encontró en: {CHROMEDRIVER_PATH}")
+
+
+**Para las estadisticas:
+pip install bibtexparser
+
+**Instalar las dependencias driver
+
+**Instalar paquete pandas
+
+**Instalar paquete matplotlip
+
+Springer funciona super, los otros no reconocen el resumen
+
+
+**REQUERIMIENTO 3**
+
+¿Qué es analisis_variables_resumenes.py?
+Es un módulo Python reutilizable que incluye toda la lógica de análisis de resúmenes, agrupación de variables
+por categorías y generación de salidas gráficas/tablas para el requerimiento 3.
+
+**Intalar paquete: wordcloud
+**Instalar paquete: networkx
+
+**REQUERIMIENTO 5**
+
+Procesamiento
+Aplicar al menos dos técnicas de similitud textual sobre los resúmenes:
+
+Ejemplo recomendado y clásico:
+Similitud del coseno con TF-IDF (muy usada y fácil de fundamentar).
+Jaccard sobre conjuntos de palabras (otra métrica clásica y contrastada).
+
+Construir una matriz de similitud para cada técnica.
+
+**Instalar paquete: seaborn
+**Instalar paquete: scikit-learn
+
